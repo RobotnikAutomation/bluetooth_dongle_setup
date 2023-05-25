@@ -75,13 +75,7 @@ echo ${hci}
 if [ ! -z "$hci"  ];
 then
 sudo ./bdaddr -i ${hci} ${new_mac}
+sleep 1
 else
 	echo "bluetooth could not be found"
 fi
-
-for port in $(lspci | grep USB | cut -d' ' -f1); do
-    echo -n "0000:${port}"| sudo tee /sys/bus/pci/drivers/xhci_hcd/unbind;
-    sleep 1;
-    echo -n "0000:${port}" | sudo tee /sys/bus/pci/drivers/xhci_hcd/bind;
-    sleep 1;
-done
