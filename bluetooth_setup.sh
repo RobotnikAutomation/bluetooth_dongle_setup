@@ -13,18 +13,6 @@ fi
 
 mac_default_address="00:1A:7D:DA:71:13"
 
-if [ ! -d "bdaddr" ];
-then
-    git clone https://github.com/thxomas/bdaddr
-    apt-get install libbluetooth-dev
-fi
-
-cd bdaddr
-
-if [ ! -f "bdaddr" ];
-then
-    make
-fi
 if [ "$hostname" = true ]
 then
 hostname_comp=$(hostnamectl | grep 'hostname')
@@ -77,7 +65,7 @@ echo ${hci}
 
 if [ ! -z "$hci"  ];
 then
-sudo ./bdaddr -i ${hci} ${new_mac}
+sudo ./../contoller/bdaddr -i ${hci} ${new_mac}
 else
 	echo "bluetooth could not be found"
 fi
