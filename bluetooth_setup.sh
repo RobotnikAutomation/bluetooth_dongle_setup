@@ -59,9 +59,12 @@ number_to_add=00:30:
 elif [ "${robot_name}" = "rout0" ];
 then 
 number_to_add=00:35:
-elif [ "${robot_name}" = "sxsl0" ];
+elif [ "${robot_name}" = "sxls0" ];
 then 
 number_to_add=00:40:
+elif [ "${robot_name}" = "rbcar" ];
+then 
+number_to_add=00:45:
 else
 echo "invalid hostname, aborting"
 exit
@@ -75,7 +78,7 @@ echo ${hci}
 if [ ! -z "$hci"  ];
 then
 sudo ./bdaddr -i ${hci} ${new_mac}
-sleep 1
 else
 	echo "bluetooth could not be found"
 fi
+
