@@ -11,7 +11,7 @@ It takes the hostname and creates a unique mac address from it or it is also pos
 
 e.g:
 ```
-./bluetooth_setup.sh ther0-230112aa
+sudo ./bluetooth_setup.sh ther0-230112aa
 ```
 
 In case the last letters are higher than f (for example ther0-230112ag), it is mandatory to use the second method and change slightly the hostname so it is compatible with hexadecimal digits. 
