@@ -12,11 +12,10 @@ echo $hostname
 fi
 
 mac_default_address="00:1A:7D:DA:71:13"
-
+apt-get install libbluetooth-dev
 if [ ! -d "bdaddr" ];
 then
     git clone https://github.com/thxomas/bdaddr
-    apt-get install libbluetooth-dev
 fi
 
 cd bdaddr
